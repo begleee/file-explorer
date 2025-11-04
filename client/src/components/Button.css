@@ -1,0 +1,21 @@
+.file-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .25rem;
+    width: 100%;
+    padding: .2rem .4rem;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #0e0a20;
+    font-size: .8rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.file-button:hover {
+    background-color: rgba(0, 0, 0, 0.185);
+}

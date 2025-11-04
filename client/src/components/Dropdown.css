@@ -1,0 +1,25 @@
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.dropdown-item {
+    background-color: rgba(8, 8, 8, 0.616);
+    backdrop-filter: blur(2px);
+    outline: 1px solid rgb(21, 105, 183);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(36, 36, 36, 0.854);
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    padding: .1rem .4rem;
+    width: 100%;
+    text-align: left;
+}
