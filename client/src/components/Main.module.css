@@ -1,0 +1,15 @@
+.select {
+    color: #fff;
+    border: none;
+    background: none;
+}
+
+.select:focus {
+    outline: none;
+}
+
+.option {
+    color: #fff;
+    border: none;
+    background: #000;
+}
