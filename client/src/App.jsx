@@ -4,6 +4,7 @@ import PathContext from './store/path-context-creator.js'
 import SearhInput from './components/SearchInput'
 import Dropdown from './components/Dropdown.jsx';
 import classes from './App.module.css'
+import GroupedMain from './components/GroupedMain.jsx';
 
 function App() {
   const [organizeState, setOrganizeState] = useState('name-sort');
@@ -11,12 +12,10 @@ function App() {
 
   function handleChoose(e) {
     setOrganizeState(e.target.value)
-    console.log(e.target.value);
   }
 
   function handleType(e) {
     setTypeState(e.target.value);
-    console.log(e.target.value)
   }
 
   const [isFocus, setIsFocus] = useState(false);
@@ -78,16 +77,15 @@ function App() {
             </optgroup>
           </select>
         </div>
-        <div>
+        {(organizeState === 'name-sort' || organizeState === 'date-sort') && <div>
           <label htmlFor="type">Type: </label>
           <select onChange={handleType} value={typeState} className={classes.select} name="type" id="">
             <option className={classes.option} value="ascending">Ascending</option>
             <option className={classes.option} value="descending">Descending</option>
           </select>
-        </div>
+        </div>}
       </form>
-
-      <Main items={files}/>
+      {organizeState === 'name-group' ? <GroupedMain items={files} groupType="name"/> : organizeState === 'date-group' ? <GroupedMain items={files} groupType="date"/> : <Main items={files}/>}
     </div>
   )
 }
